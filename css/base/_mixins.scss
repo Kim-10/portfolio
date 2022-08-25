@@ -1,0 +1,60 @@
+$main-color: #FFA501;
+$color-hover: #19FF85;
+
+@mixin button {
+    height: 45px;
+    font-family: 'Poppins-Bolt';
+    padding: 12px 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background: $main-color;
+    border: none;
+    text-decoration: none;
+    &:hover {
+        background: $color-hover;
+        color: #fff;
+    }
+}
+
+@mixin circle {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 36px;
+    height: 36px;
+    background: $main-color;
+    border-radius: 50%;
+}
+
+@mixin circle_left {
+    &:before {
+        @include circle;
+        top: 0;
+        left: 0;
+    }
+}
+
+@mixin circle_center {
+    &:before {
+        @include circle;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin title {
+    font-family: 'Poppins-Bolt';
+    font-size: 36px;
+    margin-top: 20px;
+    position: relative;
+}
+
+@mixin line {
+    &:before {
+        content: '';
+        height: 3px;
+        width: 60px;
+        background: $main-color;
+        margin-top: 20px;
+    }
+}
